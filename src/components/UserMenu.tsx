@@ -98,16 +98,16 @@ export const UserMenu: React.FC = () => {
 
       // 只设置 overflow 来阻止滚动
       body.style.overflow = 'hidden';
-      html.style.overflow = 'hidden';
+      html.style。overflow = 'hidden';
 
       return () => {
 
         // 恢复所有原始样式
         body.style.overflow = originalBodyOverflow;
-        html.style.overflow = originalHtmlOverflow;
+        html.style。overflow = originalHtmlOverflow;
       };
     }
-  }, [isSettingsOpen, isChangePasswordOpen, isSubscribeOpen, isOfflineDownloadPanelOpen, isEmailSettingsOpen, isDeviceManagementOpen, isEcoAppsOpen]);
+  }， [isSettingsOpen, isChangePasswordOpen, isSubscribeOpen, isOfflineDownloadPanelOpen, isEmailSettingsOpen, isDeviceManagementOpen, isEcoAppsOpen]);
 
   // 设置相关状态
   const [defaultAggregateSearch, setDefaultAggregateSearch] = useState(true);
@@ -399,10 +399,10 @@ export const UserMenu: React.FC = () => {
     const url = new URL('/api/tvbox/subscribe', currentOrigin);
     url.searchParams.set('token', token);
     if (adFilter) {
-      url.searchParams.set('adFilter', 'true');
+      url.searchParams。set('adFilter', 'true');
     }
     if (yellowFilter) {
-      url.searchParams.set('yellowFilter', 'true');
+      url.searchParams。set('yellowFilter', 'true');
     }
     return url.toString();
   };
@@ -922,7 +922,7 @@ export const UserMenu: React.FC = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-        },
+        }，
         body: JSON.stringify({
           newPassword,
         }),
@@ -1069,7 +1069,7 @@ export const UserMenu: React.FC = () => {
 
           putRequest.onerror = () => {
             db.close();
-            reject(new Error('保存目录句柄失败'));
+            reject(new 错误('保存目录句柄失败'));
           };
         };
 
@@ -2303,7 +2303,7 @@ export const UserMenu: React.FC = () => {
                     <label className='flex items-center cursor-pointer'>
                       <div className='relative'>
                         <input
-                          type='checkbox'
+                          输入='checkbox'
                           className='sr-only peer'
                           checked={tmdbBackdropDisabled}
                           onChange={(e) => handleTmdbBackdropDisabledToggle(e.target.checked)}
@@ -2528,7 +2528,7 @@ export const UserMenu: React.FC = () => {
                       </label>
                       <label className='flex items-center gap-2 cursor-pointer'>
                         <input
-                          type='radio'
+                          输入='radio'
                           name='downloadMode'
                           value='filesystem'
                           checked={downloadMode === 'filesystem'}
@@ -3557,7 +3557,7 @@ export const UserMenu: React.FC = () => {
                     if (!a.isCurrent && b.isCurrent) return 1;
                     return 0;
                   })
-                  .map((device) => {
+                  。map((device) => {
                   const DeviceIcon = getDeviceIcon(device.deviceInfo);
                   return (
                     <div
@@ -3763,7 +3763,7 @@ export const UserMenu: React.FC = () => {
                   <div className='flex-shrink-0 relative'>
                     <img
                       src='/logo.png'
-                      alt='TV-PC'
+                      alt='MoonTVPlus-PC'
                       className='w-16 h-16 rounded-xl object-cover'
                     />
                     <div className='absolute -bottom-1 -right-1 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center shadow-lg'>
